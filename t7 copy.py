@@ -25,8 +25,8 @@ def Decrypt(key:str, text:str) -> str:
 	return s1
 
 def Do():
-    for keyI in range(0,99999999):
-        key = str(keyI)
+    for keyI in range(30000000,99999999):
+        key = str(99999999-keyI)
         if len(key) < 8: key = '0' * (8 - len(key))+key
         print(key)
         try:
@@ -34,7 +34,7 @@ def Do():
             print(key)
             print("done")
             return
-        except:
+        except Exception as e:
             pass
        
 Do()
